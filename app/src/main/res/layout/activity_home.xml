@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor"
+    tools:context=".Home">
+
+
+    <TextView
+        android:id="@+id/txtDoVui"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:gravity="center"
+        android:textSize="50sp" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+    </View>
+    
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/dovui"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+    </View>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btnBatDau"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/play_game" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="40dp"></View>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btnThoat"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/quit" />
+</LinearLayout>

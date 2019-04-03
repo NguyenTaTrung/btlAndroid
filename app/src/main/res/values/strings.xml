@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Game Đố Vui</string>
+    <string name="question">Câu hỏi</string>
+    <string name="play_again">Chơi lại</string>
+    <string name="time">15</string>
+    <string name="correct">Chuẩn không cần chỉnh</string>
+    <string name="wrong">Haha trả lời sai rồi</string>
+    <string name="timeup">Hết giờ</string>
+    <string name="play_game">Bắt đầu chơi</string>
+    <string name="quit">Thoát</string>
+    <string name="next">Câu tiếp theo</string>
+    <string name="cancel">✖</string>
+</resources>
