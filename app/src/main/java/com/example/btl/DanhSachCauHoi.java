@@ -12,7 +12,7 @@ import java.util.List;
 public class DanhSachCauHoi extends SQLiteOpenHelper {
 
     private Context context;
-    private static final String DB = "DoVui.db";
+    private static final String DB = "DoVui1.db";
 
     private static final int DB_VERSION = 3;
     private static final String TABLE = "CauHoi";
@@ -46,9 +46,27 @@ public class DanhSachCauHoi extends SQLiteOpenHelper {
     void danhSachCauHoi(){
         ArrayList<CauHoi> arrayList = new ArrayList<>();
 
-        arrayList.add(new CauHoi("Anh?","1","2","3","4","3"));
-        arrayList.add(new CauHoi("Unh?","1","2","3","4","4"));
-        arrayList.add(new CauHoi("Onh?","1","2","3","4","2"));
+        arrayList.add(new CauHoi("Lịch nào dài nhất ?","Lịch sử","Lịch vạn niên","Sông Tô Lịch","Lý lịch","Lịch sử"));
+        arrayList.add(new CauHoi("Con đường dài nhất là đường nào ?","Đường đến đích","Học đường","Đường đời","Đường tình yêu","Đường đời"));
+        arrayList.add(new CauHoi("Con gì đập thì sống, không đập thì chết ?","Con mèo","Con chuột","Con người","Con tim","Con tim"));
+        arrayList.add(new CauHoi("Quần rộng nhất là quần gì ?","Quần chúng","Quần đảo","Quần bò","Quần kaki","Quần đảo"));
+        arrayList.add(new CauHoi("Xã đông nhất là xã nào ?","Xã hội","Làng xã","Xã xã","Không có","Xã hội"));
+        arrayList.add(new CauHoi("Con gì đầu dê mình ốc ?","Con ốc","Con dốc","Con bò","Con đường","Con dốc"));
+        arrayList.add(new CauHoi("Môn gì càng thắng càng thua ?","Môn đấu súng","Môn đấu kiếm","Môn bơi","Môn đua xe đạp","Môn đua xe đạp"));
+        arrayList.add(new CauHoi("Cái gì mà đi thì nằm, đứng cũng nằm, nhưng nằm lại đứng ?","Bàn tay","Bàn chân","Cẳng tay","Đùi","Bàn chân"));
+        arrayList.add(new CauHoi("Chuột nào đi bằng hai chân ?","Chuột Mickey","Chuột cống","Chuột đồng","Chuột trù","Chuột Mickey"));
+        arrayList.add(new CauHoi("Vịt nào đi bằng hai chân ?","Vịt Donal","Vịt què","Vịt con","Tất cả con vịt","Tất cả con vịt"));
+        arrayList.add(new CauHoi("Cái gì của chồng mà vợ thích cầm nhất ?","Cái đó","Tiền","Tay","Chân","Tiền"));
+        arrayList.add(new CauHoi("Bạn làm việc gì đầu tiên mỗi buổi sáng ?","Đánh răng","Đi vs","Ăn sáng","Mở mắt","Mở mắt"));
+        arrayList.add(new CauHoi("Từ gì mà 100% nguời dân Việt Nam đều phát âm sai ?","Từ đúng","Từ sai","Từ xoong","Từ boong","Từ sai"));
+        arrayList.add(new CauHoi("Khi Beckham thực hiện quả đá phạt đền, anh ta sẽ sút vào đâu ?","Thủ môn","Lưới","Quả bóng","Sút ra ngoài","Quả bóng"));
+        arrayList.add(new CauHoi("Con trai có gì quý nhất ?","Cái đó","Ngọc trai","Tính cách","Khỏe","Ngọc trai"));
+        arrayList.add(new CauHoi("Sở thú bị cháy, con gì chạy ra đầu tiên ?","Con người","Con hổ","Con voi","Con chim","Con người"));
+        arrayList.add(new CauHoi("Trong 1 cuộc thi chạy, nếu bạn vượt qua người thứ 2 bạn sẽ đứng thứ mấy ?","Thứ nhất","Thứ nhì","Thứ ba","Thứ tư","Thứ nhì"));
+        arrayList.add(new CauHoi("Nắng ba năm ta chưa hề bỏ bạn. Là cái gì ?","Cái bóng","Gia đình","Bạn bè","Quần áo","Cái bóng"));
+        arrayList.add(new CauHoi("Càng chơi càng ra nuớc ?","Chơi nhau","Chơi bóng","Chơi cờ","Chơi bài","Chơi cờ"));
+        arrayList.add(new CauHoi("Cái gì Adam có 2 mà Eva chỉ có 1 ?","Mái tóc","Bàn tay","Cái đó","Chữ a","Chữ a"));
+        arrayList.add(new CauHoi("Bệnh gì bác sĩ bó tay ?","Bệnh gãy tay","Bệnh gãy chân","Bệnh khó chữa","Bệnh chảy máu","Bệnh gãy tay"));
 
         this.addDanhSachCauHoi(arrayList);
     }

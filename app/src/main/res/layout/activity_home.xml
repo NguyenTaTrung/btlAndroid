@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/backgroundColor"
+    android:background="@color/yeloow"
     tools:context=".Home">
 
 
@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:gravity="center"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        android:textColor="@color/red"/>
     
     <View
         android:layout_width="match_parent"
@@ -41,11 +42,50 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="40dp"></View>
+        android:layout_height="20dp"></View>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btnHD"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="Hướng Dẫn" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></View>
 
     <info.hoang8f.widget.FButton
         android:id="@+id/btnThoat"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/quit" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></View>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/btnSound"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:background="@color/fbutton_color_peter_river"
+        android:onClick="playSong"
+        fbutton:srcCompat="@android:drawable/ic_lock_silent_mode_off" />
+
+    <ImageButton
+        android:id="@+id/btnOutSound"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="100dp"
+        android:background="@color/fbutton_color_peter_river"
+        android:onClick="stopSong"
+        fbutton:srcCompat="@android:drawable/ic_lock_silent_mode" />
+
+</RelativeLayout>
+
 </LinearLayout>

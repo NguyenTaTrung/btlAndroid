@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/yeloow">
+
+    <TextView
+        android:id="@+id/txtGioiThieu"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:gravity="center"
+        android:text="Hướng Dẫn"
+        android:textSize="50dp"
+        android:textColor="@color/backgroundColor"/>
+
+    <TextView
+        android:id="@+id/txtNoiDung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/noidung"
+        android:textSize="20dp"
+        android:textColor="@color/backgroundColor"/>
+
+    <TextView
+        android:id="@+id/txtNoiDung1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/noidung1"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/backgroundColor"/>
+
+    <TextView
+        android:id="@+id/txtNoiDung2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/noidung2"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="20dp"
+        android:textColor="@color/backgroundColor"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp"></View>
+
+    <info.hoang8f.widget.FButton
+        android:id="@+id/btnBack"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Quay lại" />
+
+</LinearLayout>

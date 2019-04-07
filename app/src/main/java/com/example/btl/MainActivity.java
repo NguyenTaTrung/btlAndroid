@@ -10,9 +10,8 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.TextView;
-import android.graphics.Typeface;
+
 
 import java.util.Collections;
 import java.util.List;
@@ -23,12 +22,14 @@ import info.hoang8f.widget.FButton;
 public class MainActivity extends AppCompatActivity {
 
     FButton btnA, btnB, btnC, btnD;
-    TextView txtGameDoVui, timeText, txtCauHoi, txtKQ;
+    TextView txtGameDoVui, timeText, txtCauHoi, txtSai, txtDung1;
     DanhSachCauHoi dsCauHoi;
     CauHoi cauHoi;
     List<CauHoi> list;
     int id = 0;
     int time = 20;
+    int sai = 3;
+    int diem = 0;
     CountDownTimer countDownTimer;
 
     @Override
@@ -43,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
         btnD = (FButton)findViewById(R.id.btnD);
         txtGameDoVui = (TextView)findViewById(R.id.txtGameDoVui);
         timeText = (TextView)findViewById(R.id.timeText);
-        txtKQ = (TextView)findViewById(R.id.txtKQ);
+//        txtKQ = (TextView)findViewById(R.id.txtKQ);
+        txtSai = (TextView)findViewById(R.id.txtSai);
+        txtDung1 = (TextView)findViewById(R.id.txtDung1);
 
         dsCauHoi = new DanhSachCauHoi(this);
 
@@ -63,10 +66,11 @@ public class MainActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
 
                 timeText.setText(String.valueOf(time) + "s");
+                txtSai.setText(String.valueOf(sai));
 
                 time -= 1;
 
-                if(time == -1){
+                if(time == 0){
 //                    txtKQ.setText(getString(R.string.timeup));
                     disableButton();
                 }
@@ -92,6 +96,16 @@ public class MainActivity extends AppCompatActivity {
 
         countDownTimer.cancel();
         countDownTimer.start();
+
+        txtDung1.setText(String.valueOf(diem));
+        diem++;
+    }
+
+    public void Y(){
+        sai -= 1;
+        if(sai==-1){
+            Lose();
+        }
     }
 
     public void btnA(View view){
@@ -105,14 +119,14 @@ public class MainActivity extends AppCompatActivity {
                 Win();
             }
         }
-        else {
-            Lose();
+        else{
+            Y();
         }
     }
 
     public void btnB(View view){
         if(cauHoi.getDapAnB().equals(cauHoi.getTraloi())){
-            btnA.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
+            btnB.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
             if(id < list.size() - 1){
                 disableButton();
                 DungDapAn();
@@ -122,13 +136,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Lose();
+            Y();
         }
     }
 
     public void btnC(View view){
         if(cauHoi.getDapAnC().equals(cauHoi.getTraloi())){
-            btnA.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
+            btnC.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
             if(id < list.size() - 1){
                 disableButton();
                 DungDapAn();
@@ -138,13 +152,13 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Lose();
+            Y();
         }
     }
 
     public void btnD(View view){
         if(cauHoi.getDapAnD().equals(cauHoi.getTraloi())){
-            btnA.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
+            btnD.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
             if(id < list.size() - 1){
                 disableButton();
                 DungDapAn();
@@ -154,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Lose();
+            Y();
         }
     }
 
@@ -182,6 +196,19 @@ public class MainActivity extends AppCompatActivity {
         countDownTimer.cancel();
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        countDownTimer.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, Home.class);
+        startActivity(i);
+        finish();
+    }
+
     public void DungDapAn(){
         final Dialog d = new Dialog(MainActivity.this);
 //        hộp thoại k có tiêu đề
@@ -205,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
                 //bỏ hộp thoại
                 d.dismiss();
                 id++;
-                //lấy tùy chọn câu hỏi được lưu trong cauHoi
+                //lấy tùy chọn câu hỏi được lưu trong list
                 cauHoi = list.get(id);
                 //câu hỏi mới
                 update();

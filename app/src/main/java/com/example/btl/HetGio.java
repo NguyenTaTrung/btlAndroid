@@ -1,6 +1,5 @@
 package com.example.btl;
 
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.content.Intent;

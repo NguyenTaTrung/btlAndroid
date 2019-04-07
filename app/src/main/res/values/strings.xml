@@ -1,13 +1,14 @@
 <resources>
     <string name="app_name">Game Đố Vui</string>
-    <string name="question">Câu hỏi</string>
     <string name="play_again">Chơi lại</string>
-    <string name="time">15</string>
     <string name="correct">Chuẩn không cần chỉnh</string>
-    <string name="wrong">Haha trả lời sai rồi</string>
+    <string name="wrong">Bạn đã thua cuộc</string>
+    <string name="win">Bạn đã chiến thắng</string>
     <string name="timeup">Hết giờ</string>
     <string name="play_game">Bắt đầu chơi</string>
     <string name="quit">Thoát</string>
     <string name="next">Câu tiếp theo</string>
-    <string name="cancel">✖</string>
+    <string name="noidung">- Mỗi 1 câu hỏi có 4 đáp án cho bạn trả lời trong vòng 20s, hết 20s bạn không trả lời bạn sẽ thua.</string>
+    <string name="noidung1">- Bạn được phép sai tối đa 3 lần trong 1 lần chơi, sai đến lần thứ 4 thì bạn bị thua cuộc.</string>
+    <string name="noidung2">- Nếu bạn trả lời hết tất cả các câu hỏi thì bạn là người chiến thắng không thì bạn sẽ thua cuộc.</string>
 </resources>

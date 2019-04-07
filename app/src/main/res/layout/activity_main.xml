@@ -1,28 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fbutton="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <LinearLayout
-        android:id="@+id/activity_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/backgroundColor"
-        android:orientation="vertical">
+    android:background="@color/yeloow"
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/red">
+        android:layout_height="70dp"
+        android:background="@color/red"
+        android:minHeight="?actionBarSize">
+
+        <TextView
+            android:id="@+id/txtDiem"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="0dp"
+            android:text="Điểm:"
+            android:textColor="@color/backgroundColor"
+            android:textSize="20sp" />
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:padding="0dp">
+
+            <TextView
+                android:id="@+id/txtDung1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txtGameDoVui"
@@ -30,8 +45,9 @@
                 android:layout_height="match_parent"
                 android:layout_toLeftOf="@+id/timeText"
                 android:gravity="center"
+                android:paddingLeft="10dp"
                 android:text="@string/app_name"
-                android:textColor="@color/white"
+                android:textColor="@color/backgroundColor"
                 android:textSize="25sp" />
 
             <TextView
@@ -40,10 +56,10 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:gravity="center"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
-                android:text="@string/time"
+                android:gravity="center"
+                android:text=""
                 android:textSize="20sp" />
 
 
@@ -59,7 +75,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".5"
+        android:layout_weight=".4"
         android:background="@color/white"
         android:orientation="vertical">
 
@@ -69,26 +85,44 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:gravity="center"
-            android:text="@string/question"
+            android:text=""
             android:textColor="@color/grey"
             android:textSize="18sp" />
 
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".2"
+        android:background="@color/white">
+
         <TextView
-            android:id="@+id/txtKQ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:id="@+id/txtConLai"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="Lượt còn lại:"
+            android:textColor="@color/backgroundColor"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtSai"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="135dp"
             android:gravity="center"
             android:text=""
-            android:textColor="@color/green"
-            android:textSize="30sp" />
+            android:textColor="@color/red"
+            android:textSize="20sp" />
 
-
-    </LinearLayout>
+    </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight=".9"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -128,6 +162,3 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
