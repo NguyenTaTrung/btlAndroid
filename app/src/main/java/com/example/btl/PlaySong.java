@@ -8,6 +8,7 @@ import android.os.IBinder;
 public class PlaySong extends Service {
 
     private MediaPlayer sound;
+
     public PlaySong() {
     }
 
@@ -21,16 +22,16 @@ public class PlaySong extends Service {
     public void onCreate(){
         super.onCreate();
         sound = MediaPlayer.create(getApplicationContext(), R.raw.boom_online);
-
-        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                if (sound.isLooping()) {
-                }else {
-                    sound.start();
-                }
-            }
-        });
+        sound.setLooping(true);
+//        sound.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+//            @Override
+//            public void onCompletion(MediaPlayer mp) {
+//                if (sound.isLooping()) {
+//                }else {
+//                    sound.start();
+//                }
+//            }
+//        });
     }
 
     public int onStartCommand(Intent intent, int flags, int startId){

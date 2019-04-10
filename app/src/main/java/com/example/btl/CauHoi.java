@@ -22,6 +22,7 @@ public class CauHoi extends Activity {
     }
 
     public CauHoi() {
+
         id = 0;
         cauhoi = "";
         daA = "";

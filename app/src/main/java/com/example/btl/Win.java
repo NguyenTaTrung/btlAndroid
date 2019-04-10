@@ -24,10 +24,4 @@ public class Win extends Activity {
             }
         });
     }
-
-//    public void Win(View view){
-//        Intent i = new Intent(Win.this,MainActivity.class);
-//        startActivity(i);
-//        finish();
-//    }
 }

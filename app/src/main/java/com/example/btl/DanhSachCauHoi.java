@@ -43,6 +43,7 @@ public class DanhSachCauHoi extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+    //Tạo danh sách các câu hỏi
     void danhSachCauHoi(){
         ArrayList<CauHoi> arrayList = new ArrayList<>();
 
@@ -71,6 +72,7 @@ public class DanhSachCauHoi extends SQLiteOpenHelper {
         this.addDanhSachCauHoi(arrayList);
     }
 
+    //Thêm 1 câu hỏi vào trong csdl
     private void addDanhSachCauHoi(ArrayList<CauHoi> danhSachCauHoi){
         SQLiteDatabase db = this.getWritableDatabase();
         db.beginTransaction();
@@ -92,12 +94,14 @@ public class DanhSachCauHoi extends SQLiteOpenHelper {
         }
     }
 
+    //Lấy danh sách các câu hỏi
     List<CauHoi> getDanhSachCauHoi(){
 
         List<CauHoi> ch = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         db.beginTransaction();
         String cot[] = {ID, CAU_HOI, DAP_AN_A, DAP_AN_B, DAP_AN_C, DAP_AN_D, TRA_LOI};
+        //Lấy ra danh sách câu hỏi trong bảng
         Cursor cursor = db.query(TABLE, cot, null, null, null, null, null);
 
         while (cursor.moveToNext()){

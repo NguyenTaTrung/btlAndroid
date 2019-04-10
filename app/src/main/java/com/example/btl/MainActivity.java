@@ -48,18 +48,20 @@ public class MainActivity extends AppCompatActivity {
         txtSai = (TextView)findViewById(R.id.txtSai);
         txtDung1 = (TextView)findViewById(R.id.txtDung1);
 
+        //csdl
         dsCauHoi = new DanhSachCauHoi(this);
-
+        //đọc ghi csdl
         dsCauHoi.getWritableDatabase();
-
+        //kiểm tra xem các câu hỏi, đáp án và câu trả lời đã được thêm vào trong bảng hay chưa
+        //nếu chưa thì trả về ds có kích thước = 0
         if(dsCauHoi.getDanhSachCauHoi().size() == 0){
             dsCauHoi.danhSachCauHoi();
         }
-
+        //tạo 1 list là các dsch
         list = dsCauHoi.getDanhSachCauHoi();
-
+        //random câu hỏi
         Collections.shuffle(list);
-
+        //lấy câu hỏi, các đáp án lời cho id tương ứng
         cauHoi = list.get(id);
 
         countDownTimer = new CountDownTimer(22000, 1000) {
@@ -101,16 +103,10 @@ public class MainActivity extends AppCompatActivity {
         diem++;
     }
 
-    public void Y(){
-        sai -= 1;
-        if(sai==-1){
-            Lose();
-        }
-    }
-
     public void btnA(View view){
         if(cauHoi.getDapAnA().equals(cauHoi.getTraloi())){
             btnA.setButtonColor(ContextCompat.getColor(getApplicationContext(),R.color.lightGreen));
+            //nếu còn list các câu hỏi
             if(id < list.size() - 1){
                 disableButton();
                 DungDapAn();
@@ -120,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else{
-            Y();
+            ConLai();
         }
     }
 
@@ -136,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Y();
+            ConLai();
         }
     }
 
@@ -152,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Y();
+            ConLai();
         }
     }
 
@@ -168,7 +164,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         else {
-            Y();
+            ConLai();
+        }
+    }
+
+    public void ConLai(){
+        sai -= 1;
+        if(sai == -1){
+            Lose();
         }
     }
 
@@ -190,28 +193,9 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        countDownTimer.cancel();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        countDownTimer.start();
-    }
-
-    @Override
-    public void onBackPressed() {
-        Intent i = new Intent(this, Home.class);
-        startActivity(i);
-        finish();
-    }
-
     public void DungDapAn(){
         final Dialog d = new Dialog(MainActivity.this);
-//        hộp thoại k có tiêu đề
+        //thông báo k có tiêu đề
         d.requestWindowFeature(Window.FEATURE_NO_TITLE);
         if (d.getWindow() != null){
             ColorDrawable cd = new ColorDrawable(Color.TRANSPARENT);
@@ -229,12 +213,12 @@ public class MainActivity extends AppCompatActivity {
         btnCauTiep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //bỏ hộp thoại
+                //bỏ thông báo
                 d.dismiss();
                 id++;
-                //lấy tùy chọn câu hỏi được lưu trong list
+                //lấy câu hỏi, câu trả lời có trong list tương ứng với id đó
                 cauHoi = list.get(id);
-                //câu hỏi mới
+                //setText cho các button
                 update();
                 ResetColor();
                 enableButton();
@@ -261,5 +245,30 @@ public class MainActivity extends AppCompatActivity {
         btnB.setEnabled(true);
         btnC.setEnabled(true);
         btnD.setEnabled(true);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        countDownTimer.cancel();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        countDownTimer.start();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i = new Intent(this, Home.class);
+        startActivity(i);
+        finish();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        countDownTimer.cancel();
     }
 }
